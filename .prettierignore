@@ -9,6 +9,7 @@ plugins
 .vscode/launch.json
 .vscode/settings.json
 .vscode/tasks.json
+.vscode/extensions.json
 
 # Ignore npm/yarn debug log
 npm-debug.log

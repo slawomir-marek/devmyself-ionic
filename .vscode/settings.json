@@ -16,6 +16,10 @@
       "editor.formatOnSave": false
     },
     "editor.tabSize": 2,
+    "editor.fontFamily": "'Fira Code', monospace",
+    "editor.fontLigatures": true,
+    "terminal.integrated.fontFamily": "'Fira Code', monospace",
+    "terminal.integrated.customGlyphs": true,
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
     "workbench.colorCustomizations": {

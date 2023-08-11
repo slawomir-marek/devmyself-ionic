@@ -1,6 +1,7 @@
 {
     "tabWidth": 2,
     "useTabs": false,
+    "singleQuote": true,
     "semi": true,
     "bracketSpacing": true,
     "trailingComma": "es5",
@@ -11,9 +12,9 @@
       {
         "files": "*.html",
         "options": {
-          "parser": "angular"
+          "parser": "angular",
+          "singleQuote": false
         }
       }
     ]
   }
-  

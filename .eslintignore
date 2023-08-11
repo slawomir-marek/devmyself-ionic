@@ -1,6 +1,8 @@
 package.json
 package-lock.json
-android
+node_modules
+
 ios
 plugins
-node_modules
+resources
+www

@@ -1,9 +1,11 @@
 node_modules
 
-# Ignore artifacts:
+# Ignore artifacts & native build files:
 android
 ios
 plugins
+resources
+www
 
 # Ignore IDE settings
 .vscode/launch.json

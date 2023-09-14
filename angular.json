@@ -118,6 +118,10 @@
     },
     "@ionic/angular-toolkit:page": {
       "styleext": "scss"
+    },
+    "@schematics/angular:component": {
+      "style": "scss",
+      "changeDetection": "OnPush"
     }
   }
 }

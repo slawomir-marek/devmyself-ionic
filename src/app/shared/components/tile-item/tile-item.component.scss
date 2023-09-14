@@ -1,0 +1,30 @@
+.tile-item {
+  display: flex;
+
+  &__image-container {
+    height: 240px;
+    padding: 10px;
+    margin: 5px 0;
+
+    border: 1px solid #cacaca;
+    border-radius: 5px;
+
+    background: white;
+  }
+
+  &__image {
+    max-height: 100%;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}

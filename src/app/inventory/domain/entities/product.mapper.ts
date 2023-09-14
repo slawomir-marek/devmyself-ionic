@@ -1,6 +1,5 @@
 import { ProductDto } from './product.dto';
-import { ProductWithAlias } from './product-alias';
-import { createImageUrlOpaque, createMoneyOpaque, ProductWithOpaque } from './product-opaque';
+import { createImageUrlModel, createMoneyModel, ProductModel, ProductWithAlias } from './product.model';
 
 function productWithAliasArrayFromProductDtoArray(source: ProductDto[]): ProductWithAlias[] {
   return source.map((item) => {
@@ -19,15 +18,15 @@ function productWithAliasArrayFromProductDtoArray(source: ProductDto[]): Product
   });
 }
 
-function productWithOpaqueArrayFromProductDtoArray(source: ProductDto[]): ProductWithOpaque[] {
+function productModelArrayFromProductDtoArray(source: ProductDto[]): ProductModel[] {
   return source.map((item) => {
     return {
       id: item.id,
       title: item.title,
-      price: createMoneyOpaque(item.price),
+      price: createMoneyModel(item.price),
       description: item.description,
       category: item.category,
-      image: createImageUrlOpaque(item.image),
+      image: createImageUrlModel(item.image),
       rating: {
         rate: item.rating.rate,
         count: item.rating.count,
@@ -40,6 +39,6 @@ export const toProductWithAliasArray = {
   fromProductDtoArray: productWithAliasArrayFromProductDtoArray,
 };
 
-export const toProductWithOpaqueArray = {
-  fromProductDtoArray: productWithOpaqueArrayFromProductDtoArray,
+export const toProductModelArray = {
+  fromProductDtoArray: productModelArrayFromProductDtoArray,
 };

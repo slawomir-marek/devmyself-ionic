@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 
-import { ProductWithAlias, ProductWithOpaque, toProductWithAliasArray, toProductWithOpaqueArray } from '../entities';
+import { ProductModel, ProductWithAlias, toProductModelArray, toProductWithAliasArray } from '../entities';
 import { ProductDto } from '../entities/product.dto';
 
 @Injectable({
@@ -13,20 +13,10 @@ export class InventoryService {
 
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<ProductDto[]> {
-    return this.http.get<ProductDto[]>(this.endpoint).pipe(map((data) => data));
-  }
-
-  getAllWithAlias(): Observable<ProductWithAlias[]> {
-    return this.http
-      .get<ProductDto[]>(this.endpoint)
-      .pipe(map((data) => toProductWithAliasArray.fromProductDtoArray(data)));
-  }
-
-  getAllWithOpaque(): Observable<ProductWithOpaque[]> {
+  getAllProducts(): Observable<ProductModel[]> {
     return this.http.get<ProductDto[]>(this.endpoint).pipe(
       map((data) => {
-        const items = toProductWithOpaqueArray.fromProductDtoArray(data);
+        const items = toProductModelArray.fromProductDtoArray(data);
         return items;
       })
     );

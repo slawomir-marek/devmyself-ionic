@@ -2,12 +2,12 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { SharedModule } from '@devmyself/shared';
 
-import { ProductsListComponent } from './components';
+import { ProductsGridComponent, ProductsSliderComponent } from './components';
 
 @NgModule({
   imports: [CommonModule, SharedModule],
-  declarations: [ProductsListComponent],
-  exports: [ProductsListComponent],
+  declarations: [ProductsGridComponent, ProductsSliderComponent],
+  exports: [ProductsGridComponent, ProductsSliderComponent],
   providers: [],
 })
 export class InventoryModule {}

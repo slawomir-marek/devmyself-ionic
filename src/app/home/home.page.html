@@ -1,16 +1,24 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button autoHide="false"></ion-menu-button>
-    </ion-buttons>
-    <ion-title class="header__title">
-      <img class="header__logo" alt="logo" src="assets/svg/logo.svg" />
-    </ion-title>
-    <ion-buttons slot="end">
-      <ion-icon class="header__action" name="heart-outline" aria-label="Favourites"></ion-icon>
-      <ion-icon class="header__action" name="cart-outline" aria-label="Cart"></ion-icon>
-      <ion-icon class="header__action" name="person-outline" aria-label="User"></ion-icon>
-    </ion-buttons>
+    <div class="header__content">
+      <ion-buttons class="header__actions header__actions--start">
+        <ion-menu-button class="ion-hide-lg-up" autoHide="false"></ion-menu-button>
+        <devmyself-search-bar class="header__search--desktop ion-hide-lg-down"></devmyself-search-bar>
+      </ion-buttons>
+
+      <ion-title class="header__title">
+        <img class="header__logo" alt="logo" src="assets/svg/logo.svg" />
+      </ion-title>
+
+      <ion-buttons class="header__actions header__actions--end">
+        <ion-icon class="header__action" name="heart-outline" aria-label="Favourites"></ion-icon>
+        <ion-icon class="header__action" name="cart-outline" aria-label="Cart"></ion-icon>
+        <ion-icon class="header__action" name="person-outline" aria-label="User"></ion-icon>
+      </ion-buttons>
+    </div>
+  </ion-toolbar>
+  <ion-toolbar class="ion-hide-lg-up">
+    <devmyself-search-bar class="header__search"></devmyself-search-bar>
   </ion-toolbar>
 </ion-header>
 

@@ -1,0 +1,106 @@
+$search-bar-min-height: 46px;
+$search-bar-min-width: 200px;
+$search-bar-input-tb-padding: 5px;
+$search-bar-input-lr-padding: 20px;
+
+:host {
+  display: flex;
+  flex-grow: 1;
+}
+
+:host-context(.header__search--desktop) {
+  .search-bar {
+    flex-direction: row;
+
+    &__icon {
+      &--search {
+        right: unset;
+      }
+    }
+  }
+}
+
+.search-bar {
+  $self: &;
+
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row-reverse;
+
+  &__container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: $search-bar-min-height;
+
+    width: $search-bar-input-lr-padding * 2;
+    min-width: $search-bar-input-lr-padding * 2;
+    transition: 0.5s;
+  }
+
+  &__input {
+    position: relative;
+    background: transparent;
+    color: white;
+    padding: 10px 40px;
+    border-width: 0;
+    letter-spacing: 0;
+    width: 100%;
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+
+    position: absolute;
+    cursor: pointer;
+    padding: $search-bar-input-tb-padding $search-bar-input-lr-padding;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    z-index: 10;
+    margin: 10px;
+    font-size: 25px;
+
+    &--search {
+      pointer-events: none;
+      right: 0;
+    }
+
+    &--close {
+      display: none;
+    }
+  }
+
+  &--not-empty {
+    #{ $self }__icon {
+      &--close {
+        display: block;
+        right: 0;
+      }
+    }
+  }
+
+  &--dirty {
+    #{ $self }__container {
+      min-width: $search-bar-min-width;
+      width: 100%;
+    }
+
+    #{ $self }__icon {
+      &--search {
+        left: 0;
+      }
+    }
+
+    #{ $self }__input {
+      cursor: auto;
+      padding: 10px 40px;
+      outline: solid 1px #eaeaea;
+    }
+  }
+}

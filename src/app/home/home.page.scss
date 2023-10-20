@@ -10,9 +10,7 @@
 #container p {
   font-size: 16px;
   line-height: 22px;
-
   color: #8c8c8c;
-
   margin: 0;
 }
 
@@ -20,11 +18,36 @@
   text-decoration: none;
 }
 
-.header__action {
-  font-size: 25px;
-  margin: 5px 10px;
-}
+.header {
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
 
-.header__title {
-  text-align: center;
+  &__actions {
+    @media (min-width: 992px) {
+      min-width: 250px;
+    }
+
+    &--start {
+      justify-content: start;
+    }
+    &--end {
+      justify-content: end;
+    }
+  }
+
+  &__action {
+    font-size: 25px;
+    margin: 5px 10px;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__search {
+    padding: 0 10px;
+  }
 }

@@ -1,1 +1,13 @@
-<p>tiles-slider works!</p>
+<swiper-container
+  #swiper
+  class="tiles-slider"
+  scrollbar-hide="true"
+  slides-per-view="2"
+  space-between="20"
+  slides-offset-before="40"
+  slides-offset-after="40"
+>
+  <swiper-slide *ngFor="let item of items" class="tiles-slider__item">
+    <devmyself-tile-item [data]="item"> </devmyself-tile-item>
+  </swiper-slide>
+</swiper-container>

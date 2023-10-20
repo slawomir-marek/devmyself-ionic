@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
@@ -7,6 +7,7 @@ import { SearchBarComponent, TileItemComponent, TilesGridComponent, TilesSliderC
 import { NgLetDirective } from './directives';
 
 @NgModule({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [CommonModule, IonicModule, ReactiveFormsModule],
   exports: [
     IonicModule,

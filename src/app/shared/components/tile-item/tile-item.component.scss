@@ -20,6 +20,9 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
+
+    max-height: 40px;
+    overflow: hidden;
   }
 
   &__subtitle {

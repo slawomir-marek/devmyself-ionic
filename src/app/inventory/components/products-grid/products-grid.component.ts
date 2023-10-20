@@ -11,7 +11,7 @@ import { InventoryService } from '../../domain';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductsGridComponent implements OnInit {
-  public items$: Observable<TileItemModel[]> | undefined;
+  items$: Observable<TileItemModel[]> | undefined;
 
   constructor(private service: InventoryService) {}
 

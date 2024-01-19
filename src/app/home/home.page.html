@@ -3,12 +3,14 @@
     <div class="header__content">
       <ion-buttons class="header__actions header__actions--start">
         <ion-menu-button class="ion-hide-lg-up" autoHide="false"></ion-menu-button>
-        <devmyself-search-bar class="header__search--desktop ion-hide-lg-down"></devmyself-search-bar>
+        <img class="header__logo" alt="logo" src="assets/svg/logo.svg" />
       </ion-buttons>
 
-      <ion-title class="header__title">
-        <img class="header__logo" alt="logo" src="assets/svg/logo.svg" />
-      </ion-title>
+      <devmyself-search-bar class="header__search header__search--desktop ion-hide-lg-down"></devmyself-search-bar>
+
+      <!-- <ion-title class="header__title">
+
+      </ion-title> -->
 
       <ion-buttons class="header__actions header__actions--end">
         <ion-icon class="header__action" name="heart-outline" aria-label="Favourites"></ion-icon>
@@ -18,7 +20,7 @@
     </div>
   </ion-toolbar>
   <ion-toolbar class="ion-hide-lg-up">
-    <devmyself-search-bar class="header__search"></devmyself-search-bar>
+    <devmyself-search-bar class="header__search header__search--mobile"></devmyself-search-bar>
   </ion-toolbar>
 </ion-header>
 

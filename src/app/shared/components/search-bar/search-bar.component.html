@@ -1,23 +1,21 @@
 <div class="search-bar" [ngClass]="{ 'search-bar--dirty': isDirty, 'search-bar--not-empty': !isEmpty }">
-  <div class="search-bar__container">
-    <ion-icon class="search-bar__icon search-bar__icon--search" name="search-outline" aria-label="Search"></ion-icon>
-    <input
-      #input
-      type="text"
-      class="search-bar__input"
-      placeholder="{{ placeholder }}"
-      [formControl]="searchControl"
-      [attr.maxlength]="inputMaxLength"
-      (keyup.enter)="inputOnEnter(input.value)"
-      (focus)="inputOnFocus()"
-      (blur)="inputOnBlur()"
-      data-test="search-bar__input"
-    />
-    <ion-icon
-      class="search-bar__icon search-bar__icon--close"
-      name="close-outline"
-      aria-label="Close"
-      (click)="clear()"
-    ></ion-icon>
-  </div>
+  <ion-icon class="search-bar__icon search-bar__icon--search" name="search-outline" aria-label="Search"></ion-icon>
+  <input
+    #input
+    type="text"
+    class="search-bar__input"
+    placeholder="{{ placeholder }}"
+    [formControl]="searchControl"
+    [attr.maxlength]="inputMaxLength"
+    (keyup.enter)="inputOnEnter(input.value)"
+    (focus)="inputOnFocus()"
+    (blur)="inputOnBlur()"
+    data-test="search-bar__input"
+  />
+  <ion-icon
+    class="search-bar__icon search-bar__icon--close"
+    name="close-outline"
+    aria-label="Close"
+    (click)="clear()"
+  ></ion-icon>
 </div>

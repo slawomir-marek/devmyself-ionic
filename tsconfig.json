@@ -25,9 +25,7 @@
     ],
     "useDefineForClassFields": false,
     "paths": {
-      "@devmyself/home": ["src/app/home/index.ts"],
-      "@devmyself/inventory": ["src/app/inventory/index.ts"],
-      "@devmyself/shared": ["src/app/shared/index.ts"],
+      "@devmyself/*": ["src/app/domains/*"]
     }
   },
   "angularCompilerOptions": {

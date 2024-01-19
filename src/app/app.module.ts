@@ -2,8 +2,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-import { InventoryDataModule } from '@devmyself/inventory/data/inventory-data.module';
-import { InventoryFeatureProductsModule } from '@devmyself/inventory/feature-products/inventory-feature-products.module';
+import { InventoryDataModule } from '@devmyself/inventory/data';
+import { InventoryFeatureProductsModule } from '@devmyself/inventory/feature-products';
 import { SharedModule } from '@devmyself/shared/shared.module';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 

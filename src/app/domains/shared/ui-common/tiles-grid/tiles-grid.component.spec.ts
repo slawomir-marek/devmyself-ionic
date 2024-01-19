@@ -8,7 +8,7 @@ describe('TilesGridComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TilesGridComponent]
+      declarations: [TilesGridComponent],
     });
     fixture = TestBed.createComponent(TilesGridComponent);
     component = fixture.componentInstance;

@@ -1,5 +1,4 @@
-import { TileItemModel } from '@devmyself/shared/ui-common';
-import { createImageUrlModel, createMoneyModel } from '@devmyself/shared/util-common';
+import { createImageUrlModel, createMoneyModel, TileItemModel } from '@devmyself/shared/util-common';
 
 import { ProductDto } from './product.dto';
 import { ProductModel, ProductWithAlias } from './product.model';

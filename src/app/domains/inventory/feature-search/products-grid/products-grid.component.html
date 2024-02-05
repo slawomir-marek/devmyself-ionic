@@ -1,0 +1,4 @@
+<ng-container *ngLet="items$ | async as items">
+  <div> Number of products: {{ items?.length }}</div>
+  <devmyself-tiles-grid [items]="items"></devmyself-tiles-grid>
+</ng-container>

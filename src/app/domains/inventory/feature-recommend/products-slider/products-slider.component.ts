@@ -11,6 +11,8 @@ import { InventoryService, toTileItemModelArray } from '../../data';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductsSliderComponent implements OnInit {
+  @Input() category: string | undefined;
+
   @Input() details:
     | {
         title: string;
@@ -18,7 +20,7 @@ export class ProductsSliderComponent implements OnInit {
         description?: string;
       }
     | undefined;
-  @Input() category: string | undefined;
+
   @Input() color: string | undefined;
 
   items$: Observable<TileItemModel[]> | undefined;
@@ -32,6 +34,7 @@ export class ProductsSliderComponent implements OnInit {
   constructor(private service: InventoryService) {}
 
   ngOnInit(): void {
-    this.items$ = this.service.getAllProducts().pipe(map((items) => toTileItemModelArray.fromProductModelArray(items)));
+    // TODO: replace getAllProduct with call based on category input
+    this.items$ = this.service.getProducts().pipe(map((items) => toTileItemModelArray.fromProductModelArray(items)));
   }
 }

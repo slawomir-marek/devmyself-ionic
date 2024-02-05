@@ -1,10 +1,10 @@
-<div class="product-slider" [ngStyle]="cssStyle">
-  <div class="product-slider__header" [ngStyle]="cssStyle">
+<div class="products-slider" [ngStyle]="cssStyle">
+  <div class="products-slider__header" [ngStyle]="cssStyle">
     <h2>{{ details?.title }}</h2>
     <h4>{{ details?.subtitle }}</h4>
     <span>{{ details?.description }}</span>
   </div>
-  <div class="product-slider__content" [ngStyle]="cssStyle">
+  <div class="products-slider__content" [ngStyle]="cssStyle">
     <devmyself-tiles-slider *ngLet="items$ | async as items" [items]="items"></devmyself-tiles-slider>
   </div>
 </div>

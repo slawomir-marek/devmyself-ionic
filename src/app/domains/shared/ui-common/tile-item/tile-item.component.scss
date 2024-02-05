@@ -2,6 +2,9 @@
   display: flex;
 
   &__image-container {
+    display: flex;
+    justify-content: center;
+
     height: 240px;
     padding: 10px;
     margin: 5px 0;

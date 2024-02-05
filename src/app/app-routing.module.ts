@@ -13,6 +13,15 @@ const routes: Routes = [
     path: 'home',
     component: HomePage,
   },
+  {
+    path: '',
+    children: [
+      {
+        path: 'search',
+        loadChildren: () => import('@devmyself/inventory/feature-search').then((m) => m.InventoryFeatureSearchModule),
+      },
+    ],
+  },
 ];
 
 @NgModule({

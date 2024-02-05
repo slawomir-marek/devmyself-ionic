@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { InventoryDataModule } from '@devmyself/inventory/data';
-import { InventoryFeatureProductsModule } from '@devmyself/inventory/feature-products';
+import { InventoryFeatureRecommendsModule } from '@devmyself/inventory/feature-recommend';
 import { SharedModule } from '@devmyself/shared/shared.module';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
@@ -19,7 +19,7 @@ import { HeaderComponent, HomePage } from './shell';
     AppRoutingModule,
     HttpClientModule,
     InventoryDataModule,
-    InventoryFeatureProductsModule,
+    InventoryFeatureRecommendsModule,
     SharedModule,
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

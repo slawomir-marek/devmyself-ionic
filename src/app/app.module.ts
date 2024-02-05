@@ -9,10 +9,10 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HomePage } from './shell';
+import { HeaderComponent, HomePage } from './shell';
 
 @NgModule({
-  declarations: [AppComponent, HomePage],
+  declarations: [AppComponent, HomePage, HeaderComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),

@@ -5,10 +5,10 @@
     {
       "label": "Start App",
       "type": "shell",
-      "command": "npm run start:ionic:web",
+      "command": "npm run start",
       "isBackground": true,
       "windows": {
-        "command": "npm run start:ionic:web"
+        "command": "npm run start"
       },
       "group": "build",
       "presentation": {

@@ -1,5 +1,8 @@
-#page__content {
+$header-min-height: 67px;
+
+#content {
   text-align: center;
+  top: $header-min-height;
 
   strong {
     font-size: 20px;

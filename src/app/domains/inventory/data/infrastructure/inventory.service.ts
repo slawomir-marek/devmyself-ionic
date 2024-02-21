@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { filter, map, Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 import { ProductDto } from '../entities/product.dto';
 import { toProductModelArray } from '../entities/product.mapper';

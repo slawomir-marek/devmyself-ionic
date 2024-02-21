@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { TileItemModel } from '@devmyself/shared/ui-common';
-import { map, Observable } from 'rxjs';
+import { TileItemModel } from '@devmyself/shared/util-common';
+import { Observable } from 'rxjs';
 
-import { InventoryService, toTileItemModelArray } from '../../data';
+import { InventoryFacade } from '../../data';
 
 @Component({
   selector: 'devmyself-products-slider',
@@ -31,10 +31,12 @@ export class ProductsSliderComponent implements OnInit {
     };
   }
 
-  constructor(private service: InventoryService) {}
+  constructor(private service: InventoryFacade) {}
 
   ngOnInit(): void {
-    // TODO: replace getAllProduct with call based on category input
-    this.items$ = this.service.getProducts().pipe(map((items) => toTileItemModelArray.fromProductModelArray(items)));
+    // TODO: get recommended product by category
+    this.service.fetchRecommended();
+
+    this.items$ = this.service.recommended$;
   }
 }

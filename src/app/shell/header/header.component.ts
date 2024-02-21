@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { InventoryFacade } from '@devmyself/inventory/data';
 
 @Component({
   selector: 'devmyself-header',
@@ -7,10 +7,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent {
-  constructor(private router: Router) {}
+export class HeaderComponent implements OnInit {
+  query: string = '';
+
+  constructor(private service: InventoryFacade) {}
+
+  ngOnInit(): void {
+    this.service.query$.subscribe((value) => (this.query = value));
+  }
 
   executeSearch(phrase: string): void {
-    this.router.navigate(['search'], { queryParams: { query: phrase } });
+    this.service.executeSearch(phrase);
   }
 }

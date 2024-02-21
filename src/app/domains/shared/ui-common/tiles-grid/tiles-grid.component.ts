@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-
-import { TileItemModel } from '../tile-item/tile-item.model';
+import { TileItemModel } from '@devmyself/shared/util-common';
 
 @Component({
   selector: 'devmyself-tiles-grid',

@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { TileItemModel } from '@devmyself/shared/ui-common';
-import { map, Observable } from 'rxjs';
+import { TileItemModel } from '@devmyself/shared/util-common';
+import { Observable } from 'rxjs';
 
-import { InventoryService, toTileItemModelArray } from '../../data';
+import { InventoryFacade } from '../../data';
 
 @Component({
   selector: 'devmyself-products-grid',
@@ -15,11 +15,9 @@ export class ProductsGridComponent implements OnInit {
 
   items$: Observable<TileItemModel[]> | undefined;
 
-  constructor(private service: InventoryService) {}
+  constructor(private service: InventoryFacade) {}
 
   ngOnInit(): void {
-    this.items$ = this.service
-      .getProductsByQuery(this.query)
-      .pipe(map((items) => toTileItemModelArray.fromProductModelArray(items)));
+    this.items$ = this.service.search$;
   }
 }

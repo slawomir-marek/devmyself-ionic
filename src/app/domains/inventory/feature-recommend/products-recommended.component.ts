@@ -22,6 +22,6 @@ export class ProductsRecomendedComponent {
   };
 
   constructor() {
-    // TODO: in ngOnInit call service with get you recommendation configuration
+    // TODO: in ngOnInit call something like recommendation.service to get recommendation configuration
   }
 }

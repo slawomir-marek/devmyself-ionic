@@ -7,6 +7,7 @@
 
     <devmyself-search-bar
       class="header__search header__search--desktop ion-hide-lg-down"
+      [value]="query"
       (executed)="executeSearch($event)"
     ></devmyself-search-bar>
 
@@ -20,6 +21,7 @@
 <ion-toolbar class="ion-hide-lg-up">
   <devmyself-search-bar
     class="header__search header__search--mobile"
+    [value]="query"
     (executed)="executeSearch($event)"
   ></devmyself-search-bar>
 </ion-toolbar>

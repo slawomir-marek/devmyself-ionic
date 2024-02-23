@@ -40,6 +40,7 @@ function productModelArrayFromProductDtoArray(source: ProductDto[]): ProductMode
 function tileItemModelArrayFromProductModelArray(source: ProductModel[]): TileItemModel[] {
   return source.map((item) => {
     return {
+      id: item.id,
       title: item.title,
       subtitle: item.category,
       description: item.description,

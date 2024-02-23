@@ -6,7 +6,7 @@ import { map, Observable } from 'rxjs';
 import { InventoryFacade } from '../data';
 
 @Component({
-  selector: 'devmyself-products',
+  selector: 'devmyself-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

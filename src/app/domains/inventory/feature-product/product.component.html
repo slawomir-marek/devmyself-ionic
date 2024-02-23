@@ -1,20 +1,31 @@
 <ion-content id="content">
-  <ion-grid [fixed]="true">
-    <ion-row>
-      <ion-col size="6" size-lg="6" size-md="4">
-        <!-- product image -->
-        <div class="placeholder--image">Place for product image</div>
-      </ion-col>
-      <ion-col size="6" size-lg="6" size-md="8">
-        <!-- Section - product name/category/price etc. -->
-        <div class="placeholder--text">Place for product base informations: name / category / price</div>
-        <!-- Component - add-product-to-bag.component -->
-        <div class="placeholder--text">Place for choosing size and adding to bag </div>
-        <!-- Component - product-shipment.component -->
-        <div class="placeholder--text">Place for shipment details</div>
-        <!-- Component - product-details.component -->
-        <div class="placeholder--text">Place for product details</div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <ng-container *ngIf="loadingOrError$ | async; else pageContent">
+    <ng-container *ngIf="loading$ | async"> Loading... </ng-container>
+    <ng-container *ngIf="error$ | async"> Error... </ng-container>
+  </ng-container>
 </ion-content>
+
+<ng-template #pageContent>
+  <ng-container *ngLet="item$ | async as item">
+    <ion-grid [fixed]="true" class="product">
+      <ion-row>
+        <ion-col size="6" size-lg="6" size-md="4">
+          <div class="product__image-container">
+            <img class="product__image" alt="{{ item?.description }}" src="{{ item?.image }}" />
+          </div>
+        </ion-col>
+        <ion-col size="6" size-lg="6" size-md="8">
+          <div class="product__details">
+            <div class="product__info">
+              <div class="product__info--subtitle">{{ item.subtitle }}</div>
+              <h3 class="product__info--title">{{ item.title }}</h3>
+              <div class="product__info--price">{{ item.price }} $</div>
+            </div>
+            <devmyself-product-actions class="product__actions"></devmyself-product-actions>
+            <devmyself-product-shipment class="product__shipment"></devmyself-product-shipment>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ng-container>
+</ng-template>

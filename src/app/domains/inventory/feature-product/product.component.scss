@@ -1,9 +1,37 @@
 .placeholder {
-  &--image {
-    padding: 100px 20px;
+  &--text {
+    display: flex;
+    padding: 20px 0;
+    text-align: left;
+  }
+}
+
+.product {
+  padding: 20px 0;
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 40px;
   }
 
-  &--text {
-    padding: 10px;
+  &__info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    cursor: default;
+
+    &--title {
+      margin-bottom: 20px;
+    }
+
+    &--subtitle {
+      color: var(--ion-color-step-700);
+    }
+
+    &--price {
+      color: var(--ion-color-step-700);
+    }
   }
 }

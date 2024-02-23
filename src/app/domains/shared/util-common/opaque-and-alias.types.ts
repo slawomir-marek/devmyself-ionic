@@ -3,11 +3,11 @@ type OpaqueType<BaseType, OpaqueName> = BaseType & {
   readonly [type_symbol]: OpaqueName;
 };
 
-export type MoneyModel = OpaqueType<number, 'MONEY_OPAQUE'>;
+export type MoneyModel = OpaqueType<string, 'MONEY_OPAQUE'>;
 export type ImageUrlModel = OpaqueType<string, 'IMAGE_URL_OPAQUE'>;
 
 export function createMoneyModel(value: number): MoneyModel {
-  return value as MoneyModel;
+  return value.toFixed(2) as MoneyModel;
 }
 
 export function createImageUrlModel(value: string): ImageUrlModel {

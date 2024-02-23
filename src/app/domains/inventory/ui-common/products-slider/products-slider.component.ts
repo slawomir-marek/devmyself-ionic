@@ -1,9 +1,6 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { TileItemModel } from '@devmyself/shared/util-common';
-import { Observable } from 'rxjs';
-
-import { InventoryFacade } from '../../data';
 
 @Component({
   selector: 'devmyself-products-slider',
@@ -11,7 +8,7 @@ import { InventoryFacade } from '../../data';
   styleUrls: ['./products-slider.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProductsSliderComponent implements OnInit {
+export class ProductsSliderComponent {
   @Input() category: string | undefined;
 
   @Input() details:
@@ -23,8 +20,7 @@ export class ProductsSliderComponent implements OnInit {
     | undefined;
 
   @Input() color: string | undefined;
-
-  items$: Observable<TileItemModel[]> | undefined;
+  @Input() items: TileItemModel[] | undefined;
 
   get cssStyle() {
     return {
@@ -32,14 +28,7 @@ export class ProductsSliderComponent implements OnInit {
     };
   }
 
-  constructor(private service: InventoryFacade, private router: Router) {}
-
-  ngOnInit(): void {
-    // TODO: get recommended product by category
-    this.service.fetchRecommended();
-
-    this.items$ = this.service.recommended$();
-  }
+  constructor(private router: Router) {}
 
   onTileItemClicked(item: TileItemModel): void {
     this.router.navigate(['product', item.id]);

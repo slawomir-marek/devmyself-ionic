@@ -5,10 +5,6 @@
     <span>{{ details?.description }}</span>
   </div>
   <div class="products-slider__content" [ngStyle]="cssStyle">
-    <devmyself-tiles-slider
-      *ngLet="items$ | async as items"
-      [items]="items"
-      (clicked)="onTileItemClicked($event)"
-    ></devmyself-tiles-slider>
+    <devmyself-tiles-slider [items]="items" (clicked)="onTileItemClicked($event)"></devmyself-tiles-slider>
   </div>
 </div>

@@ -10,7 +10,6 @@ import { InventoryService } from '../infrastructure/inventory.service';
 export class InventoryFacade {
   private _query: BehaviorSubject<string> = new BehaviorSubject('');
   private _itemsStore: BehaviorSubject<Record<string, TileItemModel>> = new BehaviorSubject({});
-  private _recommendedStore: BehaviorSubject<TileItemModel[]> = new BehaviorSubject(<any>[]);
 
   private _loading: BehaviorSubject<boolean> = new BehaviorSubject(false);
   private _error: BehaviorSubject<boolean> = new BehaviorSubject(false);
@@ -31,8 +30,8 @@ export class InventoryFacade {
     return this._itemsStore.pipe(map((items) => items[id]));
   }
 
-  recommended$(): Observable<TileItemModel[]> {
-    return this._recommendedStore.asObservable();
+  recommendedByCategory$(category: string): Observable<TileItemModel[]> {
+    return this._itemsStore.pipe(map((items) => Object.values(items).filter((x) => x.subtitle === category)));
   }
 
   isLoadingOrError$(): Observable<boolean> {
@@ -86,12 +85,6 @@ export class InventoryFacade {
 
       this._itemsStore.next(store);
     });
-  }
-
-  fetchRecommended(): void {
-    this._loading.next(true);
-
-    this.getProducts().subscribe((value) => this._recommendedStore.next(value));
   }
 
   executeSearch(query: string): void {

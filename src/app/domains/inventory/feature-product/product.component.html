@@ -27,5 +27,12 @@
         </ion-col>
       </ion-row>
     </ion-grid>
+    <devmyself-products-slider
+      *ngLet="crossSale$ | async as crossSale"
+      [items]="crossSale"
+      [details]="crossSaleDetails"
+      [category]="crossSaleCategory"
+      color="#4a4a4a"
+    ></devmyself-products-slider>
   </ng-container>
 </ng-template>

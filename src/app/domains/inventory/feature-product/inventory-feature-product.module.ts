@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { InventoryUIModule } from '@devmyself/inventory/ui-common';
 import { SharedModule } from '@devmyself/shared/shared.module';
 
 import { ProductComponent } from './product.component';
@@ -9,7 +10,7 @@ import { ProductShipmentComponent } from './product-shipment/product-shipment.co
 
 @NgModule({
   declarations: [ProductComponent, ProductActionsComponent, ProductShipmentComponent],
-  imports: [SharedModule, RouterModule.forChild(PRODUCT_ROUTES)],
+  imports: [InventoryUIModule, SharedModule, RouterModule.forChild(PRODUCT_ROUTES)],
   exports: [ProductComponent],
 })
 export class InventoryFeatureProductModule {}

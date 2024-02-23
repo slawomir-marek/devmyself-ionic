@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TileItemModel } from '@devmyself/shared/util-common';
-import { map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 
 import { InventoryFacade } from '../data';
 
@@ -13,9 +13,18 @@ import { InventoryFacade } from '../data';
 })
 export class ProductComponent implements OnInit {
   item$: Observable<TileItemModel> | undefined;
+  crossSale$: Observable<TileItemModel[]> | undefined;
+
   loadingOrError$!: Observable<boolean>;
   loading$!: Observable<boolean>;
   error$!: Observable<boolean>;
+
+  crossSaleCategory = `electronics`;
+  crossSaleDetails = {
+    title: 'More nice things',
+    subtitle: 'How about these?',
+    description: 'Discover newest gadgets',
+  };
 
   constructor(private service: InventoryFacade, private route: ActivatedRoute) {}
 
@@ -29,6 +38,7 @@ export class ProductComponent implements OnInit {
       this.loadingOrError$ = this.service.isLoadingOrError$();
 
       this.item$ = this.service.itemById$(productId);
+      this.crossSale$ = this.service.recommendedByCategory$(this.crossSaleCategory);
     }
   }
 }

@@ -1,7 +1,21 @@
 <div class="products-recommended">
-  <devmyself-products-slider [details]="menDetails" category="men" color="#2e2e2e"></devmyself-products-slider>
-  <devmyself-products-slider [details]="womenDetails" category="women" color="#4a4a4a"></devmyself-products-slider>
   <devmyself-products-slider
+    *ngLet="menItems$ | async as menItems"
+    [items]="menItems"
+    [details]="menDetails"
+    category="men"
+    color="#2e2e2e"
+  ></devmyself-products-slider>
+  <devmyself-products-slider
+    *ngLet="womenItems$ | async as womenItems"
+    [items]="womenItems"
+    [details]="womenDetails"
+    category="women"
+    color="#4a4a4a"
+  ></devmyself-products-slider>
+  <devmyself-products-slider
+    *ngLet="jeweleryItems$ | async as jeweleryItems"
+    [items]="jeweleryItems"
     [details]="jeweleryDetails"
     category="jewelery"
     color="#3e3e3e"

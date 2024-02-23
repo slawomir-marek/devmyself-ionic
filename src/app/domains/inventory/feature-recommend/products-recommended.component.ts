@@ -1,4 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { InventoryFacade } from '@devmyself/inventory/data';
+import { TileItemModel } from '@devmyself/shared/util-common';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'devmyself-products-recommended',
@@ -6,7 +9,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./products-recommended.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProductsRecomendedComponent {
+export class ProductsRecomendedComponent implements OnInit {
+  private readonly menCategory = `men's clothing`;
+  private readonly womenCategory = `women's clothing`;
+  private readonly jeweleryCategory = `jewelery`;
+
   menDetails = {
     title: 'Clothes for men',
     subtitle: 'Streetwear fashion you must have',
@@ -21,7 +28,19 @@ export class ProductsRecomendedComponent {
     subtitle: 'Something shiny for him and her',
   };
 
-  constructor() {
+  menItems$: Observable<TileItemModel[]> | undefined;
+  womenItems$: Observable<TileItemModel[]> | undefined;
+  jeweleryItems$: Observable<TileItemModel[]> | undefined;
+
+  constructor(private service: InventoryFacade) {
     // TODO: in ngOnInit call something like recommendation.service to get recommendation configuration
+  }
+
+  ngOnInit(): void {
+    this.service.fetchAll();
+
+    this.menItems$ = this.service.recommendedByCategory$(this.menCategory);
+    this.womenItems$ = this.service.recommendedByCategory$(this.womenCategory);
+    this.jeweleryItems$ = this.service.recommendedByCategory$(this.jeweleryCategory);
   }
 }

@@ -20,6 +20,10 @@ const routes: Routes = [
         path: 'search',
         loadChildren: () => import('@devmyself/inventory/feature-search').then((m) => m.InventoryFeatureSearchModule),
       },
+      {
+        path: 'product/:id',
+        loadChildren: () => import('@devmyself/inventory/feature-product').then((m) => m.InventoryFeatureProductModule),
+      },
     ],
   },
 ];

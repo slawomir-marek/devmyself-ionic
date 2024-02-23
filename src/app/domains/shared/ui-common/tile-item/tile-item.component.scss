@@ -1,5 +1,7 @@
 .tile-item {
   display: flex;
+  flex-direction: column;
+  cursor: pointer;
 
   &__image-container {
     display: flex;

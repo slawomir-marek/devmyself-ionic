@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TileItemModel } from '@devmyself/shared/util-common';
 import { Observable } from 'rxjs';
 
@@ -31,12 +32,16 @@ export class ProductsSliderComponent implements OnInit {
     };
   }
 
-  constructor(private service: InventoryFacade) {}
+  constructor(private service: InventoryFacade, private router: Router) {}
 
   ngOnInit(): void {
     // TODO: get recommended product by category
     this.service.fetchRecommended();
 
     this.items$ = this.service.recommended$;
+  }
+
+  onTileItemClicked(item: TileItemModel): void {
+    this.router.navigate(['product', item.id]);
   }
 }

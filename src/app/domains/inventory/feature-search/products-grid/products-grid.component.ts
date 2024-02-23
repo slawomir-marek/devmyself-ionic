@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TileItemModel } from '@devmyself/shared/util-common';
 import { Observable } from 'rxjs';
 
@@ -15,9 +16,13 @@ export class ProductsGridComponent implements OnInit {
 
   items$: Observable<TileItemModel[]> | undefined;
 
-  constructor(private service: InventoryFacade) {}
+  constructor(private service: InventoryFacade, private router: Router) {}
 
   ngOnInit(): void {
     this.items$ = this.service.search$;
+  }
+
+  onTileItemClicked(item: TileItemModel): void {
+    this.router.navigate(['product', item.id]);
   }
 }

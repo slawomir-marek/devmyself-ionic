@@ -2,12 +2,12 @@
   #swiper
   class="tiles-slider"
   scrollbar-hide="true"
-  slides-per-view="2"
-  space-between="20"
+  slides-per-view="4"
+  space-between="30"
   slides-offset-before="40"
   slides-offset-after="40"
 >
   <swiper-slide *ngFor="let item of items" class="tiles-slider__item">
-    <devmyself-tile-item [data]="item"> </devmyself-tile-item>
+    <devmyself-tile-item [data]="item" (clicked)="onTileItemClicked(item)"> </devmyself-tile-item>
   </swiper-slide>
 </swiper-container>

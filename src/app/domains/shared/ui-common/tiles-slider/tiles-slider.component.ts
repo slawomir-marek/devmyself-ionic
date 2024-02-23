@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { TileItemModel } from '@devmyself/shared/util-common';
 
 @Component({
@@ -12,10 +12,16 @@ export class TilesSliderComponent {
 
   @Input() items: TileItemModel[] | undefined;
 
+  @Output() clicked: EventEmitter<TileItemModel> = new EventEmitter();
+
   @ViewChild('swiper')
   set swiper(swiperRef: ElementRef) {
     setTimeout(() => {
       this.swiperInstance = swiperRef.nativeElement.swiper;
     }, 0);
+  }
+
+  onTileItemClicked(item: TileItemModel): void {
+    this.clicked.next(item);
   }
 }

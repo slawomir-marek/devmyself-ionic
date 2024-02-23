@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { TileItemModel } from '@devmyself/shared/util-common';
 
 @Component({
@@ -9,4 +9,10 @@ import { TileItemModel } from '@devmyself/shared/util-common';
 })
 export class TilesGridComponent {
   @Input() items: TileItemModel[] | undefined;
+
+  @Output() clicked: EventEmitter<TileItemModel> = new EventEmitter();
+
+  onTileItemClicked(item: TileItemModel): void {
+    this.clicked.next(item);
+  }
 }

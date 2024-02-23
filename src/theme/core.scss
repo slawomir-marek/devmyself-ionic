@@ -1,8 +1,13 @@
 $header-min-height: 67px;
+$header-min-height-mobile: 134px;
 
 #content {
   text-align: center;
-  top: $header-min-height;
+  top: $header-min-height-mobile;
+
+  @media (min-width: 992px) {
+    top: $header-min-height;
+  }
 
   strong {
     font-size: 20px;
@@ -12,7 +17,7 @@ $header-min-height: 67px;
   p {
     font-size: 16px;
     line-height: 22px;
-    color: #8c8c8c;
+    color: var(--ion-color-step-500);
     margin: 0;
   }
 

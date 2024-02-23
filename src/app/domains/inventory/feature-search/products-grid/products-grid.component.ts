@@ -19,7 +19,7 @@ export class ProductsGridComponent implements OnInit {
   constructor(private service: InventoryFacade, private router: Router) {}
 
   ngOnInit(): void {
-    this.items$ = this.service.search$;
+    this.items$ = this.service.items$();
   }
 
   onTileItemClicked(item: TileItemModel): void {

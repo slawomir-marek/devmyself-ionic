@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   constructor(private service: InventoryFacade) {}
 
   ngOnInit(): void {
-    this.service.query$.subscribe((value) => (this.query = value));
+    this.service.query$().subscribe((value) => (this.query = value));
   }
 
   executeSearch(phrase: string): void {

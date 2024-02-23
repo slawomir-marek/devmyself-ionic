@@ -38,7 +38,7 @@ export class ProductsSliderComponent implements OnInit {
     // TODO: get recommended product by category
     this.service.fetchRecommended();
 
-    this.items$ = this.service.recommended$;
+    this.items$ = this.service.recommended$();
   }
 
   onTileItemClicked(item: TileItemModel): void {

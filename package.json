@@ -13,12 +13,14 @@
     "watch": "ng build --watch --configuration development",
     "test": "jest",
     "test:watch": "jest --watch",
+    "barrels": "barrelsby --config barrelsby.config.json",
     "lint:check": "npx eslint src/**/*.{js,jsx,ts,tsx,html} --quiet",
     "lint": "npx eslint src/**/*.{js,jsx,ts,tsx,html} --quiet --fix",
     "prettier:check": "npx prettier src/**/*.{js,jsx,ts,tsx,html,css,scss} --check",
     "prettier": "npx prettier src/**/*.{js,jsx,ts,tsx,html,css,scss} --write",
     "format:check": "npm run lint:check && npm run prettier:check",
-    "format": "npm run lint && npm run prettier"
+    "format": "npm run lint && npm run prettier",
+    "prep": "npm run barrels && npm run format"
   },
   "private": true,
   "dependencies": {

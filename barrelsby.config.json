@@ -1,0 +1,16 @@
+{
+  "directory": [
+    "./src/app/domains/inventory/data",
+    "./src/app/domains/inventory/feature-product",
+    "./src/app/domains/inventory/feature-recommend",
+    "./src/app/domains/inventory/feature-search",
+    "./src/app/domains/inventory/ui-common",
+    "./src/app/domains/shared/ui-common",
+    "./src/app/domains/shared/util-common",
+    "./src/app/domains/shared/util-rest",
+    "./src/app/shell"
+  ],
+  "singleQuotes": true,
+  "delete": true,
+  "exclude": ["[a-z]*.spec.ts"]
+}

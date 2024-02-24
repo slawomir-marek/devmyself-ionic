@@ -1,13 +1,8 @@
 $header-min-height: 67px;
-$header-min-height-mobile: 134px;
+$footer-min-height: 44px;
 
-#content {
+#main-content {
   text-align: center;
-  top: $header-min-height-mobile;
-
-  @media (min-width: 992px) {
-    top: $header-min-height;
-  }
 
   strong {
     font-size: 20px;

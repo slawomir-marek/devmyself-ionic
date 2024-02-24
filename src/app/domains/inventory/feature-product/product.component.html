@@ -1,9 +1,7 @@
-<ion-content id="content">
-  <ng-container *ngIf="loadingOrError$ | async; else pageContent">
-    <ng-container *ngIf="loading$ | async"> Loading... </ng-container>
-    <ng-container *ngIf="error$ | async"> Error... </ng-container>
-  </ng-container>
-</ion-content>
+<ng-container *ngIf="loadingOrError$ | async; else pageContent">
+  <ng-container *ngIf="loading$ | async"> Loading... </ng-container>
+  <ng-container *ngIf="error$ | async"> Error... </ng-container>
+</ng-container>
 
 <ng-template #pageContent>
   <ng-container *ngLet="item$ | async as item">

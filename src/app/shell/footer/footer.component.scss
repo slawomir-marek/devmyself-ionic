@@ -1,0 +1,10 @@
+@import 'src/theme/core.scss';
+
+.footer {
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+    min-height: $footer-min-height;
+  }
+}
